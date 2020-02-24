@@ -27,6 +27,12 @@ namespace JsonServer.Services.DataBase
             return connection.Table<T>().FirstOrDefault(d => d.Id == id);
         }
 
+        public static bool Exists<T>(T model) where T : IModel, new()
+        {
+            return Find<T>(model.Id) != null;
+
+        }
+
         // #region CRUD
         /// <summary>
         /// Read
@@ -72,9 +78,11 @@ namespace JsonServer.Services.DataBase
         public static int Delete<T>(T model) where T : IModel, new()
         {
             SQLiteConnection connection = DBConnect<T>();
-            return connection.Delete<T>(model);
+            return connection.Delete(model);
         }
         // #endregion
+
+
 
     }
 }

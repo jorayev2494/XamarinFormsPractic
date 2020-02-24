@@ -4,6 +4,7 @@ G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\ref\JsonServ
 G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\JsonServer.pdb
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\App.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MVVM\Views\DB\UsersDbListView.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MVVM\Views\Users\UserCreateView.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MVVM\Views\Users\UserEditView.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MVVM\Views\Users\UserShowView.xaml.g.cs
@@ -15,4 +16,3 @@ G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\XamlC.stamp
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\ref\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.pdb
-G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.csprojAssemblyReference.cache

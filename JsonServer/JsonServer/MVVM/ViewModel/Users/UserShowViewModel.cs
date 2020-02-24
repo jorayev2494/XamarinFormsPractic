@@ -43,7 +43,7 @@ namespace JsonServer.MVVM.ViewModel.Users
 
         public string Avatar 
         { 
-            get => "http://192.168.1.108:8080" + ShowUser.Avatar;
+            get => ShowUser.Avatar;
             set 
             {
                 if (value != ShowUser.Avatar)
