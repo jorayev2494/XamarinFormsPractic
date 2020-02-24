@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="User Show"
+             x:Class="JsonServer.MVVM.Views.Users.UserShowView">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{ Binding Path=UserEditCommand }" CommandParameter="{ Binding Path=Show }" />
+    </ContentPage.ToolbarItems>    
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5" VerticalOptions="Center" BackgroundColor="White">
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="6">
+                <Image Source="{ Binding Path=Avatar }" WidthRequest="255" HeightRequest="255" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <Label Text="Avatar" FontSize="Medium" />
+                    <Label Text="{ Binding Path=Avatar }" Margin="10, 0, 0, 0" TextColor="Red" FontSize="Large" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <Label Text="Name" FontSize="Medium" />
+                    <Label Text="{ Binding Path=Name }" Margin="10, 0, 0, 0" TextColor="Red" FontSize="Large" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <Label Text="Last Name" FontSize="Medium" />
+                    <Label Text="{ Binding Path=LastName }" Margin="10, 0, 0, 0" TextColor="Red" FontSize="Large" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <Label Text="Email" FontSize="Medium" />
+                    <Label Text="{ Binding Path=Email }" Margin="10, 0, 0, 0" TextColor="Red" FontSize="Large" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <Label Text="Phone" FontSize="Medium" />
+                    <Label Text="{ Binding Path=Phone }" Margin="10, 0, 0, 0" TextColor="Red" FontSize="Large" />
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

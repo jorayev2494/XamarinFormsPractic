@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="User Create"
+             x:Class="JsonServer.MVVM.Views.Users.UserCreateView">
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" Padding="5" VerticalOptions="Center" BackgroundColor="White">
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="6">
+                <Image Source="{ Binding Path=Avatar }" WidthRequest="255" HeightRequest="255" />
+
+                <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                        <Label Text="Name" FontSize="Medium" />
+                        <Entry Text="{ Binding Path=Name }" Margin="10, 0, 0, 0" TextColor="Green" FontSize="Large" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                        <Label Text="Last Name" FontSize="Medium" />
+                        <Entry Text="{ Binding Path=LastName }" Margin="10, 0, 0, 0" TextColor="Green" FontSize="Large" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                        <Label Text="Email" FontSize="Medium" />
+                        <Entry Text="{ Binding Path=Email }" Margin="10, 0, 0, 0" TextColor="Green" FontSize="Large" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                        <Label Text="Phone" FontSize="Medium" />
+                        <Entry Text="{ Binding Path=Phone }" Margin="10, 0, 0, 0" Keyboard="Numeric" TextColor="Green" FontSize="Large" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
+                        <Button Text="Create" Command="{ Binding Path=UserCreateCommand }" BackgroundColor="Orange" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

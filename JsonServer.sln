@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonServer.Android", "JsonServer\JsonServer.Android\JsonServer.Android.csproj", "{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonServer", "JsonServer\JsonServer\JsonServer.csproj", "{B635843C-2914-439D-A5E7-F9A05E49A0C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7E3433-A762-442D-AEF8-B5AE89CD3D4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B635843C-2914-439D-A5E7-F9A05E49A0C2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99E33148-E6AB-46BB-A80D-BBD0E1BE7B24}
+	EndGlobalSection
+EndGlobal

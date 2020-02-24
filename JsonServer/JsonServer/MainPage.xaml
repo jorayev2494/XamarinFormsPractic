@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="JsonServer.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <StackLayout Margin="4" Padding="4" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" Opacity="1">
+
+            <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdlgc30XicBIdeUh_RtOPKT8j_nsDPPoyPefGpRnrd-V1ifnXs" WidthRequest="400" Opacity="1" />
+
+            <Label Text="Sign in" HorizontalOptions="Center" FontSize="Large" TextColor="OrangeRed" />
+
+            <StackLayout Orientation="Vertical" Padding="6, 0" BackgroundColor="Transparent" Opacity="1">
+                <Label Text="Login or email" FontSize="Medium" />
+                <Entry x:Name="login" Text="" Placeholder="login" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="6, 0" BackgroundColor="Transparent" Opacity="1" >
+                <Label Text="{ Binding Source={ x:Reference Name=password }, Path=Text, StringFormat='Password: {0}' }" FontSize="Medium"/>
+                <Entry x:Name="password" Text="" IsPassword="True" Placeholder="********" />
+            </StackLayout>
+
+            <Button Text="Sign in" VerticalOptions="Center" TextColor="Black" Opacity="{ Binding Source={ x:Reference Name=slider }, Path=Value }" BackgroundColor="DarkViolet" />
+
+            <Slider x:Name="slider" Minimum="0.0" Maximum="1" Value="0.5" />
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:JsonServer.MVVM.ViewModel.Users"                
+             mc:Ignorable="d"
+             x:Name="Body"
+             x:Class="JsonServer.MVVM.Views.Users.UsersListView"
+             Title="Users List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="User Create" Order="Default" Command="{ Binding Path=GoUserCreateCommand }" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.BindingContext>
+        <viewModel:UsersViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+
+            <ListView ItemsSource="{ Binding Path=Users }" ItemSelected="ListView_ItemSelected"
+                        IsPullToRefreshEnabled="True"
+                        RefreshCommand="{ Binding Path=RefreshUsersListCommand }"
+                        IsRefreshing="{ Binding Path=IsRefreshing }"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ImageCell ImageSource="{ Binding StringFormat='http://192.168.1.108:8080{0}', Path=Avatar}"
+                                   Text="{ Binding Path=Name}" TextColor="Blue"
+                                   Detail="{ Binding Path=Email }" DetailColor="Orange" >
+                            <ImageCell.ContextActions>
+                                <MenuItem Text="Delete" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.UserDeleteCommand }" CommandParameter="{ Binding Path=. }" />
+                            </ImageCell.ContextActions>
+                        </ImageCell>
+
+                    </DataTemplate>        
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
