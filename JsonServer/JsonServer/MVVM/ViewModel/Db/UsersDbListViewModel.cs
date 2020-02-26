@@ -1,4 +1,5 @@
 ﻿using JsonServer.MVVM.Models;
+using JsonServer.MVVM.Views.DB;
 using JsonServer.Services.DataBase;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,14 @@ namespace JsonServer.MVVM.ViewModel.Db
 
         public ICommand DbRedreshingCommand { get; private set; }
         public ICommand UserDbDeleteCommand { get; private set; }
+        public ICommand UserDbSelectedCommand { get; private set; }
 
         public UsersDbListViewModel()
         {
             DbUsers = new ObservableCollection<User>();
             this.DbRedreshingCommand = new Command(DbLoadUsers);
             this.UserDbDeleteCommand = new Command<User>(u => UserDbDelete(u));
+            this.UserDbSelectedCommand = new Command<User>(async (u) => await App.Current.MainPage.Navigation.PushAsync(new UserDbShowView(u)));
             this.DbLoadUsers();
         }
 

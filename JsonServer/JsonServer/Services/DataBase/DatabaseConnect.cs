@@ -21,16 +21,24 @@ namespace JsonServer.Services.DataBase
             return dbCon;
         }
 
+        // Find
         public static T Find<T>(int id) where T : IModel, new()
         {
             SQLiteConnection connection = DBConnect<T>();
             return connection.Table<T>().FirstOrDefault(d => d.Id == id);
         }
 
+        // Exists
         public static bool Exists<T>(T model) where T : IModel, new()
         {
             return Find<T>(model.Id) != null;
 
+        }
+
+        // Count
+        public static int Count<T>() where T : new()
+        {
+            return Read<T>().Count();
         }
 
         // #region CRUD
@@ -63,10 +71,11 @@ namespace JsonServer.Services.DataBase
         /// <typeparam name="T"></typeparam>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static int Update<T>(T model) where T : IModel, new()
+        public static T Update<T>(T model) where T : IModel, new()
         {
             SQLiteConnection connection = DBConnect<T>();
-            return connection.Update(model);
+            connection.Update(model);
+            return Find<T>(model.Id);
         }
 
         /// <summary>

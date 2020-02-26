@@ -33,7 +33,7 @@ namespace JsonServer.MVVM.Views.DB
             User selectedUser = e.SelectedItem as User;
 
             if (selectedUser != null)
-               ViewModel.UserDbDeleteCommand.Execute(selectedUser);
+               ViewModel.UserDbSelectedCommand.Execute(selectedUser);
 
             listView.SelectedItem = null;
         }

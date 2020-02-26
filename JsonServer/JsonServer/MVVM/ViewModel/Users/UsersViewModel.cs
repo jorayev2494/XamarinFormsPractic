@@ -65,7 +65,12 @@ namespace JsonServer.MVVM.ViewModel.Users
             this.RefreshUsersListCommand = new Command(LoadUsers);
 
             // Database
-            this.SaveLocalDbCpmmand = new Command<User>(u => SaveLocalDb(u));
+            this.SaveLocalDbCpmmand = new Command<User>(u => SaveLocalDb(u), (u) => {
+                int countDbEl = DatabaseConnect.Count<User>();
+                return countDbEl < 5;
+            });
+
+            // Go Users
             this.GoDbUsersCommand = new Command(async () => await Application.Current.MainPage.Navigation.PushAsync(new UsersDbListView()));
 
             this.LoadUsers();

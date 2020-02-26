@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="MVVM\Views\DB\UserDbEditView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MVVM\Views\DB\UserDbShowView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="MVVM\Views\DB\UsersDbListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

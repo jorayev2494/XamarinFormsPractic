@@ -10,8 +10,8 @@
              Title="Users List">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="User Create" Order="Default" Command="{ Binding Path=GoUserCreateCommand }" />
-        <ToolbarItem Text="Db List >" Order="Default" Command="{ Binding Path=GoDbUsersCommand }" />
+        <ToolbarItem Text="User Create" Order="Secondary" Command="{ Binding Path=GoUserCreateCommand }" />
+        <ToolbarItem Text="Db List" Order="Primary" Command="{ Binding Path=GoDbUsersCommand }" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.BindingContext>
