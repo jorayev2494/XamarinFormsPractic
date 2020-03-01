@@ -72,6 +72,8 @@ namespace JsonServer.MVVM.ViewModel.Db
             }
         }
 
+        
+        // Poviye && Bestruke
         public string Avatar
         {
             get => EditUser.Avatar;
@@ -80,6 +82,19 @@ namespace JsonServer.MVVM.ViewModel.Db
                 if (EditUser.Avatar != value)
                 {
                     EditUser.Avatar = value;
+                    base.OnPropertyChanged("Avatar");
+                }
+            }
+        }
+
+        public ImageSource AvatarSource
+        {
+            get => EditUser.AvatarSource;
+            set
+            {
+                if (EditUser.AvatarSource != value)
+                {
+                    EditUser.AvatarSource = value;
                     base.OnPropertyChanged("Avatar");
                 }
             }

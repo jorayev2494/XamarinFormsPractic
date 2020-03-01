@@ -1,5 +1,6 @@
 ﻿using JsonServer.MVVM.Models;
 using JsonServer.MVVM.Views.DB;
+using JsonServer.Services.Convert;
 using JsonServer.Services.DataBase;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,11 @@ namespace JsonServer.MVVM.ViewModel.Db
 
             IEnumerable<User> dbUser = DatabaseConnect.Read<User>();
 
-            foreach (User user in dbUser) DbUsers.Add(user);
+            foreach (User user in dbUser)
+            {
+                user.AvatarSource = ProjectConverter.Base64ToSource(user.Avatar);
+                DbUsers.Add(user);
+            }
 
             this.IsDdRefreshing = !this.IsDdRefreshing;
         }

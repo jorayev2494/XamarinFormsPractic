@@ -43,13 +43,26 @@ namespace JsonServer.MVVM.ViewModel.Users
 
         public string Avatar
         {
-            get => "http://192.168.1.108:8080" + EditUser.Avatar;
+            get => App.URL + EditUser.Avatar;
             set
             {
                 if (value != EditUser.Avatar)
                 {
                     EditUser.Avatar = value;
                     base.OnPropertyChanged("Avatar");
+                }
+            }
+        }
+
+        public ImageSource AvatarSource
+        {
+            get => EditUser.AvatarSource;
+            set
+            {
+                if (EditUser.AvatarSource != value)
+                {
+                    EditUser.AvatarSource = value;
+                    base.OnPropertyChanged("AvatarSource");
                 }
             }
         }
@@ -84,7 +97,6 @@ namespace JsonServer.MVVM.ViewModel.Users
         public UserEditViewModel(User model)
         {
             this.EditUser = model;
-
             UserUpdateCommand = new Command(UserUpdate);
         }
 

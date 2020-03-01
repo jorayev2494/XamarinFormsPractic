@@ -19,9 +19,9 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
 
-                        <ImageCell ImageSource="{ Binding StringFormat='http://192.168.1.108:8080{0}', Path=Avatar}"
+                        <ImageCell ImageSource="{ Binding Path=AvatarSource }"
                                    Text="{ Binding Path=Name}" TextColor="Blue"
-                                   Detail="{ Binding Path=Email }" DetailColor="Orange" >
+                                   Detail="{ Binding Path=Avatar }" DetailColor="Orange">
                             <ImageCell.ContextActions>
                                 <MenuItem Text="Delete" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.UserDbDeleteCommand }" CommandParameter="{ Binding Path=. }" />
                             </ImageCell.ContextActions>

@@ -28,15 +28,32 @@
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-
-                        <ImageCell ImageSource="{ Binding Path=Avatar }" Height="255"
-                                   Text="{ Binding Path=Name}" TextColor="Blue"
-                                   Detail="{ Binding Path=Avatar }" DetailColor="Orange" >
+                        <ViewCell>
                             <ImageCell.ContextActions>
                                 <MenuItem Text="Delete" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.UserDeleteCommand }" CommandParameter="{ Binding Path=. }" />
                                 <MenuItem Text="Local save" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.SaveLocalDbCpmmand }" CommandParameter="{ Binding Path=. }" />
                             </ImageCell.ContextActions>
-                        </ImageCell>
+                            
+                            <StackLayout Orientation="Horizontal" Padding="4">
+                                <Image Source="{ Binding Path=Avatar }"/>
+                                
+                                <StackLayout>
+                                    <Label Text="{ Binding Path=Name }"/>
+                                    <Label Text="{ Binding Path=Email }" TextColor="Gray"/>
+                                </StackLayout>
+                                <Button Text="Follow" HorizontalOptions="EndAndExpand" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.SaveLocalDbCpmmand }" CommandParameter="{ Binding Path=. }" />
+                            </StackLayout>
+
+                        </ViewCell>
+
+                        <!--<ImageCell ImageSource="{ Binding Path=AvatarSource }" Height="255"
+                                   Text="{ Binding Path=Name}" TextColor="Blue"
+                                   Detail="{ Binding Path=Email }" DetailColor="Orange" >
+                            <ImageCell.ContextActions>
+                                <MenuItem Text="Delete" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.UserDeleteCommand }" CommandParameter="{ Binding Path=. }" />
+                                <MenuItem Text="Local save" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.SaveLocalDbCpmmand }" CommandParameter="{ Binding Path=. }" />
+                            </ImageCell.ContextActions>
+                        </ImageCell>-->
 
                     </DataTemplate>        
                 </ListView.ItemTemplate>

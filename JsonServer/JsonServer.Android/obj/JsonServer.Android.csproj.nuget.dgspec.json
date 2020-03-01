@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[3.0.0.12, )"
+            },
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
@@ -53,6 +57,10 @@
             "XF.Material": {
               "target": "Package",
               "version": "[1.5.8, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -118,6 +126,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[3.0.0.12, )"
+            },
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
@@ -125,6 +137,10 @@
             "XF.Material": {
               "target": "Package",
               "version": "[1.5.8, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

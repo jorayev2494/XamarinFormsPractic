@@ -1,15 +1,18 @@
 ﻿using JsonServer.MVVM.Models.Interfaces;
+using JsonServer.Services.Convert;
 using Newtonsoft.Json;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace JsonServer.MVVM.Models
 {
     [Table("users")]
     public class User : IModel
     {
+
         [JsonProperty("id")]
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -31,8 +34,12 @@ namespace JsonServer.MVVM.Models
         public string Phone { get; set; }
 
         [JsonProperty("avatar")]
-        [MaxLength(250)]
+        [MaxLength(int.MaxValue)]
         public string Avatar { get; set; }
+
+        [Ignore]
+        public ImageSource AvatarSource { get; set; }
+
 
         public User()
         {

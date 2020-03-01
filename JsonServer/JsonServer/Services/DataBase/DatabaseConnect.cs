@@ -45,7 +45,7 @@ namespace JsonServer.Services.DataBase
         /// <summary>
         /// Read
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">Model</typeparam>
         /// <returns></returns>
         public static IEnumerable<T> Read<T>() where T : new()
         {
@@ -88,6 +88,17 @@ namespace JsonServer.Services.DataBase
         {
             SQLiteConnection connection = DBConnect<T>();
             return connection.Delete(model);
+        }
+
+        /// <summary>
+        /// CLEAR DataBase
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static void CLEAR<T>() where T : new()
+        {
+            DBConnect<T>().DeleteAll<T>();
+            // return connection.DeleteAll<T>();
         }
         // #endregion
 

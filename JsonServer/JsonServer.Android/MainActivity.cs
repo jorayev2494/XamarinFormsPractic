@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.CurrentActivity;
 
 namespace JsonServer.Droid
 {
@@ -21,6 +22,8 @@ namespace JsonServer.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            CrossCurrentActivity.Current.Init(this, savedInstanceState); // Permission
 
             XF.Material.Droid.Material.Init(this, savedInstanceState);  // This is XF Mateial Design
 

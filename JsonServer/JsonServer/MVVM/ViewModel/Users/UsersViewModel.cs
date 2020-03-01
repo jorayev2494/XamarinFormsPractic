@@ -1,6 +1,8 @@
-﻿using JsonServer.MVVM.Models;
+﻿using Android.Media;
+using JsonServer.MVVM.Models;
 using JsonServer.MVVM.Views.DB;
 using JsonServer.MVVM.Views.Users;
+using JsonServer.Services.Convert;
 using JsonServer.Services.DataBase;
 using JsonServer.Services.RestServer;
 using System;
@@ -42,6 +44,7 @@ namespace JsonServer.MVVM.ViewModel.Users
 
         public UsersViewModel()
         {
+
             this.Users = new ObservableCollection<User>();
 
             this.ItemSelectedCommand = new Command<User>(u => ItemSeleccted(u));
@@ -72,6 +75,7 @@ namespace JsonServer.MVVM.ViewModel.Users
 
             // Go Users
             this.GoDbUsersCommand = new Command(async () => await Application.Current.MainPage.Navigation.PushAsync(new UsersDbListView()));
+            // this.GoDbUsersCommand = new Command(() => DatabaseConnect.CLEAR<User>());
 
             this.LoadUsers();
         }
@@ -85,12 +89,13 @@ namespace JsonServer.MVVM.ViewModel.Users
 
             IEnumerable<User> RestUsers = await RestApi.GET<User>("/users");
 
-            Users.Clear();
+            this.Users.Clear();
 
             // Adding RestUsers in ObserverCollection
             foreach (User user in RestUsers)
             {
-                user.Avatar = "http://192.168.1.108:8080" + user.Avatar;
+                // user.AvatarSource = await ProjectConverter.UriImgToImageSource(user.Avatar);
+                user.Avatar = App.URL + user.Avatar;
                 this.Users.Add(user);
             }
  
@@ -106,6 +111,11 @@ namespace JsonServer.MVVM.ViewModel.Users
         // DataBase
         private async void SaveLocalDb(User model)
         {
+            // await App.Current.MainPage.DisplayAlert("Uri", $"Info: {model.Avatar}", "Ok");
+
+            // Avatar = base64String
+            model.Avatar = await ProjectConverter.UriImgToString(model.Avatar);
+
             if (DatabaseConnect.Exists<User>(model))
             {
                 await Application.Current.MainPage.DisplayAlert("Info", model.Name + " uze saved!", "Ok");
@@ -124,5 +134,7 @@ namespace JsonServer.MVVM.ViewModel.Users
                 }
             }
         }
+
+        
     }
 }

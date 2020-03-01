@@ -41,15 +41,27 @@ namespace JsonServer.MVVM.ViewModel.Users
             }
         }
 
-        public string Avatar 
-        { 
+        public string Avatar
+        {
             get => ShowUser.Avatar;
-            set 
+            set
             {
                 if (value != ShowUser.Avatar)
                 {
                     ShowUser.Avatar = value;
                     base.OnPropertyChanged("Avatar");
+                }
+            }
+        }
+
+        public ImageSource AvatarSource 
+        { 
+            get => ShowUser.AvatarSource;
+            set {
+                if (ShowUser.AvatarSource != value)
+                {
+                    ShowUser.AvatarSource = value;
+                    base.OnPropertyChanged("AvatarSource");
                 }
             } 
         }
@@ -92,7 +104,6 @@ namespace JsonServer.MVVM.ViewModel.Users
             // await Application.Current.MainPage.DisplayAlert("Selected", string.Format("Item: {0}", selected), "Ok");
 
             await Application.Current.MainPage.Navigation.PushAsync(new UserEditView(ShowUser));
-
         }
 
     }

@@ -2,6 +2,9 @@ G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\JsonServer.d
 G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\ref\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\JsonServer.pdb
+G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\Mono.Android.dll
+G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\Mono.Android.pdb
+G:\Mobile\JsonServer\JsonServer\JsonServer\bin\Debug\netstandard2.0\Mono.Android.xml
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\App.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\MVVM\Views\DB\UserDbEditView.xaml.g.cs
@@ -15,6 +18,7 @@ G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.c
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.AssemblyInfoInputs.cache
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.AssemblyInfo.cs
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\XamlC.stamp
+G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.csproj.CopyComplete
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\ref\JsonServer.dll
 G:\Mobile\JsonServer\JsonServer\JsonServer\obj\Debug\netstandard2.0\JsonServer.pdb
