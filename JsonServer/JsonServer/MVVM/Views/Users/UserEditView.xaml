@@ -11,7 +11,10 @@
         <ScrollView Orientation="Vertical" Padding="5" VerticalOptions="Center" BackgroundColor="White">
 
             <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="6">
-                <Image Source="{ Binding Path=AvatarSource }" WidthRequest="255" HeightRequest="255" />
+                <StackLayout Orientation="Vertical" Margin="5">
+                    <Image Source="{ Binding Path=AvatarSource }" WidthRequest="255" HeightRequest="255" />
+                    <Button Text="Select Image" BackgroundColor="OrangeRed" Command="{ Binding Path=SelectImageCommand }" />
+                </StackLayout>
 
                 <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">

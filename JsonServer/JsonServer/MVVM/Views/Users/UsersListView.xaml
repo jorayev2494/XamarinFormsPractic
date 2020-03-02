@@ -29,10 +29,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ImageCell.ContextActions>
+                            <ViewCell.ContextActions>
                                 <MenuItem Text="Delete" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.UserDeleteCommand }" CommandParameter="{ Binding Path=. }" />
                                 <MenuItem Text="Local save" Command="{ Binding Source={ x:Reference Name=Body }, Path=BindingContext.SaveLocalDbCpmmand }" CommandParameter="{ Binding Path=. }" />
-                            </ImageCell.ContextActions>
+                            </ViewCell.ContextActions>
                             
                             <StackLayout Orientation="Horizontal" Padding="4">
                                 <Image Source="{ Binding Path=Avatar }"/>

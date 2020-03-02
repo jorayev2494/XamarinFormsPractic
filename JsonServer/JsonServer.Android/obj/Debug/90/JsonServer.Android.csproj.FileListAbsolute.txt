@@ -67,6 +67,7 @@ G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\res\mipmap-xxhdp
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\res\mipmap-xxhdpi\launcher_foreground.png
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
+G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\res\xml\file_paths.xml
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\uploadflags.txt
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\resolvedassemblies.hash
 G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\android\assets\FormsViewGroup.dll

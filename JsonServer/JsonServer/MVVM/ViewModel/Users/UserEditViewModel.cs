@@ -1,19 +1,32 @@
 ﻿using JsonServer.MVVM.Models;
+using JsonServer.Services.Convert;
 using JsonServer.Services.RestServer;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace JsonServer.MVVM.ViewModel.Users
 {
     public class UserEditViewModel : BaseMVVM
     {
 
+        private MediaFile mediaFile;
+
         private User EditUser { get; set; }
 
+
         public ICommand UserUpdateCommand { get; private set; }
+
+        #region Select Image Command
+        public ICommand SelectImageCommand { get; private set; }
+        #endregion
 
         public string Name
         {
@@ -43,7 +56,7 @@ namespace JsonServer.MVVM.ViewModel.Users
 
         public string Avatar
         {
-            get => App.URL + EditUser.Avatar;
+            get => EditUser.Avatar;
             set
             {
                 if (value != EditUser.Avatar)
@@ -97,13 +110,50 @@ namespace JsonServer.MVVM.ViewModel.Users
         public UserEditViewModel(User model)
         {
             this.EditUser = model;
+            this.AvatarSource = Task.Run<ImageSource>(async () => await ProjectConverter.UriImgToImageSource(Avatar)).Result;
             UserUpdateCommand = new Command(UserUpdate);
+            SelectImageCommand = new Command(SelectImage);
+        }
+
+        private async void SelectImage()
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await App.Current.MainPage.DisplayAlert("No Pick Photo", ":( No Pick Photo available.", "Ok");
+                return;
+            }
+
+            // Select Image
+            mediaFile = await CrossMedia.Current.PickPhotoAsync();
+
+            if (mediaFile == null) return;
+
+            // Show selected Image
+            AvatarSource = ImageSource.FromStream(() => mediaFile.GetStream());
         }
 
         private async void UserUpdate()
         {
 
-            User updatedUser = await RestApi.PUT<User>("/users", EditUser);
+            // FormData
+            MultipartFormDataContent formDataContent = new MultipartFormDataContent();
+            // Add data in FormData
+            // Many Data file[]
+            // formDataContent.Add(new StreamContent(mediaFile.GetStream()), "avatar[]", "photo.jpg");
+
+            if (mediaFile != null)
+                formDataContent.Add(new StreamContent(mediaFile.GetStream()), "avatar", "avatar.jpg");
+
+            // Properties
+            formDataContent.Add(new StringContent(EditUser.Name), "name");
+            formDataContent.Add(new StringContent(EditUser.LastName), "last_name");
+            formDataContent.Add(new StringContent(EditUser.Phone), "phone");
+            formDataContent.Add(new StringContent(EditUser.Email), "email");
+
+            // Put RestApi
+            User updatedUser = await RestApi.POST_FORM_DATA<User>($"/users/{EditUser.Id}", formDataContent);
 
             if (updatedUser != null)
             {
@@ -111,7 +161,9 @@ namespace JsonServer.MVVM.ViewModel.Users
                 await Application.Current.MainPage.Navigation.PopToRootAsync();
             }
             else
+            {
                 await Application.Current.MainPage.DisplayAlert("Error Server", "User dont updated!", "Ok");
+            }
         }
 
     }

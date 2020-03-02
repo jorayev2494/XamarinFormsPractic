@@ -36,6 +36,7 @@ declare-styleable;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\9
 dimen;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\53\jl\res\values\dimens.xml
 enum;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\2\jl\res\values\values.xml
 external-cache-path;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\50\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-files-path;obj\Debug\90\res\xml\file_paths.xml
 external-path;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\50\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\icon_round.xml
@@ -77,6 +78,7 @@ path;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\53\jl\re
 path;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\53\jl\res\drawable\xf_radio_button_selected.xml
 path;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\53\jl\res\drawable\xf_radio_button_unselected.xml
 paths;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\50\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;obj\Debug\90\res\xml\file_paths.xml
 resources;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\2\jl\res\values\values.xml
 resources;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\51\jl\res\values\styles.xml
 resources;G:\Mobile\JsonServer\JsonServer\JsonServer.Android\obj\Debug\90\lp\53\jl\res\values\dimens.xml

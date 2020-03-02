@@ -15,7 +15,7 @@ namespace JsonServer.Services.RestServer
     public class RestApi
     {
 
-        public const string URL = App.URL + "/api";          // api - prefix
+        public static string URL = App.URL + "/api";          // api - prefix
 
         static private HttpClient GetClient()
         {
@@ -178,6 +178,26 @@ namespace JsonServer.Services.RestServer
             HttpClient httpClient = new HttpClient();
 
             HttpResponseMessage httpResponse = await httpClient.PostAsync(URL + url, formDataContent);
+
+            string content = await httpResponse.Content.ReadAsStringAsync();
+            MobileResult mobileResult = JsonConvert.DeserializeObject<MobileResult>(content);
+
+            return JsonConvert.DeserializeObject<T>(mobileResult.Data.ToString());
+        }
+
+
+        /// <summary>
+        /// PUT FORM DATA
+        /// </summary>
+        /// <typeparam name="T">Type Model</typeparam>
+        /// <param name="url">Server url</param>
+        /// <param name="formDataContent">MultipartFormDataContent</param>
+        /// <returns></returns>
+        public static async Task<T> PUT_FORM_DATA<T>(string url, T model, MultipartFormDataContent formDataContent) where T : IModel
+        {
+            HttpClient httpClient = new HttpClient();
+
+            HttpResponseMessage httpResponse = await httpClient.PutAsync(URL + url + "/" + model.Id, formDataContent);
 
             string content = await httpResponse.Content.ReadAsStringAsync();
             MobileResult mobileResult = JsonConvert.DeserializeObject<MobileResult>(content);

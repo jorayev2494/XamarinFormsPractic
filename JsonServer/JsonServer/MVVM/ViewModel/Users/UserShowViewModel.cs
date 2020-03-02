@@ -1,9 +1,11 @@
 ﻿using JsonServer.MVVM.Models;
 using JsonServer.MVVM.Views.Users;
+using JsonServer.Services.Convert;
 using JsonServer.Services.RestServer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -95,6 +97,7 @@ namespace JsonServer.MVVM.ViewModel.Users
         public UserShowViewModel(User model)
         {
             this.ShowUser = model;
+            this.AvatarSource = Task.Run<ImageSource>(async () => await ProjectConverter.UriImgToImageSource(Avatar)).Result;
             UserEditCommand = new Command(UserEdit, () => ShowUser.Email != "admin@admin.com");
         }
 
@@ -102,7 +105,7 @@ namespace JsonServer.MVVM.ViewModel.Users
         {
             // string selected = await Application.Current.MainPage.DisplayActionSheet("Edit User", "Cancel", string.Format("Description: {0}", ShowUser.Email), "params", "params2", "params3");
             // await Application.Current.MainPage.DisplayAlert("Selected", string.Format("Item: {0}", selected), "Ok");
-
+            
             await Application.Current.MainPage.Navigation.PushAsync(new UserEditView(ShowUser));
         }
 

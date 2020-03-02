@@ -44,7 +44,7 @@ namespace JsonServer.Services.Convert
         {
             HttpClient httpClient = new HttpClient();
 
-            HttpResponseMessage httpResponse = await httpClient.GetAsync(App.URL + uri);
+            HttpResponseMessage httpResponse = await httpClient.GetAsync(uri);
 
             // Get Image By UrI and Convert Base64 Bytes
             byte[] iamgeBase64 = await httpResponse.Content.ReadAsByteArrayAsync();

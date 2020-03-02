@@ -31,7 +31,7 @@ namespace JsonServer.MVVM.Views.Users
         public UserCreateView()
         {
             InitializeComponent();
-            this.ViewModel = new UserCreateViewModel() { Avatar = $"{App.URL}/storage/images/photo.jpg" };
+            this.ViewModel = new UserCreateViewModel();
         }
 
         // Pik Photo Clicked

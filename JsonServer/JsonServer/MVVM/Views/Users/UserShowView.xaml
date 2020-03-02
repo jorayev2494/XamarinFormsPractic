@@ -9,13 +9,13 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Edit" Command="{ Binding Path=UserEditCommand }" CommandParameter="{ Binding Path=Show }" />
-    </ContentPage.ToolbarItems>    
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="5" VerticalOptions="Center" BackgroundColor="White">
 
             <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="6">
-                <Image Source="{ Binding Path=AvatarSource }" WidthRequest="255" HeightRequest="255" />
+                <Image Source="{ Binding Path=AvatarSource }" WidthRequest="255" HeightRequest="255" />                
             </StackLayout>
 
             <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">

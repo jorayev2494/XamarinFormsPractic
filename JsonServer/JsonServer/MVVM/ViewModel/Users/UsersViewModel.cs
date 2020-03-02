@@ -94,7 +94,7 @@ namespace JsonServer.MVVM.ViewModel.Users
             // Adding RestUsers in ObserverCollection
             foreach (User user in RestUsers)
             {
-                // user.AvatarSource = await ProjectConverter.UriImgToImageSource(user.Avatar);
+                // user.AvatarSource = await ProjectConverter.UriImgToImageSource(App.URL + user.Avatar);
                 user.Avatar = App.URL + user.Avatar;
                 this.Users.Add(user);
             }

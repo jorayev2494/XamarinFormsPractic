@@ -4,8 +4,10 @@ using JsonServer.Services.RestServer;
 using Newtonsoft.Json;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Net.Http;
 using System.Reflection;
@@ -13,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace JsonServer.MVVM.ViewModel.Users
 {
@@ -25,6 +28,9 @@ namespace JsonServer.MVVM.ViewModel.Users
         #region Upload Image
         // Select Command
         public ICommand SelectImageCommand { get; private set; }
+
+        // Take Photo Command
+        public ICommand TakePhotoCommand { get; private set; }
 
         // Send Image Server Command
         public ICommand UserCreateCommand { get; private set; }
@@ -139,9 +145,12 @@ namespace JsonServer.MVVM.ViewModel.Users
 
             #region Instance Upload Image Commands
             this.SelectImageCommand = new Command(SelectImage);
+            this.TakePhotoCommand = new Command(TakePhoto);
             this.UserCreateCommand = new Command(ImageSendServer);
             #endregion
         }
+
+
 
         /// <summary>
         /// Select Image
@@ -168,6 +177,34 @@ namespace JsonServer.MVVM.ViewModel.Users
 
             this.AvatarSource = mediaFile.Path;
 
+        }
+
+        private async void TakePhoto()
+        {
+
+            var cameraPermission = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Camera);
+
+
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await App.Current.MainPage.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                return;
+            }
+
+            mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions() {
+                Directory = "JsonServer",
+                Name = "app-json-server-" + DateTime.Now.ToString("dd-mm-ss"),
+            });
+
+            if (mediaFile == null)
+                return;
+
+            AvatarSource = ImageSource.FromStream(() =>
+            {
+                return mediaFile.GetStream();
+            });
         }
 
         /// <summary>

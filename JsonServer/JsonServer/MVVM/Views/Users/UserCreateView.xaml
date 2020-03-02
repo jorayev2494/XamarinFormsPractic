@@ -14,9 +14,9 @@
 
                 <StackLayout Orientation="Vertical" Margin="5">
                     <Image Source="{ Binding Path=AvatarSource, Mode=TwoWay }" WidthRequest="255" HeightRequest="255" />
-
-                    <!--<Button Text="Camera" BackgroundColor="OrangeRed" Command="{ Binding Path=SelectImageCommand }" />-->
-                    <Button Text="Select Image" BackgroundColor="OrangeRed" Command="{ Binding Path=SelectImageCommand }" />
+                    
+                    <!--<Button Text="Camera" BackgroundColor="AntiqueWhite" Command="{ Binding Path=TakePhotoCommand }" />-->
+                    <Button Text="Avatar" BackgroundColor="AliceBlue" Command="{ Binding Path=SelectImageCommand }" />
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Padding="4" VerticalOptions="CenterAndExpand">
